@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Created-By: Apache Jackrabbit FileVault - Package Maven Plugin 1.3.6
+Build-Jdk-Spec: 11
+Implementation-Title: Assessment - UI Content
+Implementation-Version: 1.0.0-SNAPSHOT
+Content-Package-Type: content
+Content-Package-Id: assessment:assessment.ui.content:1.0.0-SNAPSHOT
+Content-Package-Description: Assessment - UI Content
+Content-Package-Roots: /conf/assessment,/conf/global,/content/assessment
+

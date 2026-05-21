@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>Assessment - UI Content</comment>
+<entry key="allowIndexDefinitions">false</entry>
+<entry key="created">2026-05-21T11:01:31.789Z</entry>
+<entry key="groupId">com.assessment</entry>
+<entry key="name">assessment.ui.content</entry>
+<entry key="description">Assessment - UI Content</entry>
+<entry key="artifactId">assessment.ui.content</entry>
+<entry key="version">1.0.0-SNAPSHOT</entry>
+<entry key="packageType">content</entry>
+<entry key="requiresRoot">false</entry>
+<entry key="group">assessment</entry>
+</properties>

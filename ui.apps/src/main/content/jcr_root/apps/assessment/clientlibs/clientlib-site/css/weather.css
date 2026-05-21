@@ -1,0 +1,365 @@
+/* Weather Component Styles */
+
+.cmp-weather {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+}
+
+.cmp-weather h2 {
+    margin: 0 0 20px 0;
+    color: #333;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.cmp-weather__content {
+    padding: 15px;
+    background-color: white;
+    border-radius: 6px;
+    border: 1px solid #e9ecef;
+}
+
+.cmp-weather__json {
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #495057;
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+
+.cmp-weather__error {
+    padding: 20px;
+    border-radius: 8px;
+    margin: 15px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cmp-weather__error-icon {
+    font-size: 24px;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.cmp-weather__error-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.cmp-weather__error-content h3 {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.cmp-weather__error-content p {
+    margin: 0 0 15px 0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.cmp-weather__error-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cmp-weather__retry-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    align-self: flex-start;
+}
+
+.cmp-weather__retry-btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-1px);
+}
+
+.cmp-weather__retry-btn:active {
+    transform: translateY(0);
+}
+
+.cmp-weather__retry-btn:focus-visible {
+    outline: 2px solid #80bdff;
+    outline-offset: 2px;
+}
+
+.cmp-weather__error-actions small {
+    font-size: 12px;
+    opacity: 0.8;
+    line-height: 1.4;
+}
+
+/* Error-specific styles */
+.cmp-weather__error--service-unavailable {
+    background-color: #fff3cd;
+    border: 1px solid #ffeaa7;
+    color: #856404;
+}
+
+.cmp-weather__error--configuration {
+    background-color: #d1ecf1;
+    border: 1px solid #bee5eb;
+    color: #0c5460;
+}
+
+.cmp-weather__error--data {
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    color: #721c24;
+}
+
+.cmp-weather__error--unexpected {
+    background-color: #e2e3e5;
+    border: 1px solid #d6d8db;
+    color: #383d41;
+}
+
+.cmp-weather__error--generic {
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    color: #721c24;
+}
+
+/* Loading spinner */
+.cmp-weather__loading-spinner {
+    font-size: 20px;
+    margin-bottom: 10px;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.cmp-weather__loading {
+    padding: 20px;
+    text-align: center;
+    background-color: #e2e3e5;
+    border-radius: 6px;
+    color: #383d41;
+}
+
+.cmp-weather__loading p {
+    margin: 0;
+    font-style: italic;
+}
+
+.cmp-weather--unconfigured {
+    background-color: #fff3cd;
+    border-color: #ffeaa7;
+}
+
+.cmp-weather--unconfigured h2 {
+    color: #856404;
+}
+
+.cmp-weather--unconfigured p {
+    background-color: white;
+    padding: 15px;
+    border-radius: 6px;
+    border: 1px solid #ffeaa7;
+    color: #856404;
+    margin: 10px 0 0 0;
+}
+
+/* Enhanced component styles */
+.cmp-weather--enhanced {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.cmp-weather--enhanced:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.cmp-weather--healthy {
+    border-left: 4px solid #28a745;
+}
+
+.cmp-weather--unhealthy {
+    border-left: 4px solid #dc3545;
+}
+
+.cmp-weather__refresh {
+    background-color: #007bff;
+    color: white;
+    border: 1px solid #0056b3;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 0 0 20px 10px;
+    transition: background-color 0.2s ease;
+}
+
+.cmp-weather__refresh:hover {
+    background-color: #0056b3;
+}
+
+.cmp-weather__refresh:focus {
+    outline: 2px solid #80bdff;
+    outline-offset: 2px;
+}
+
+.cmp-weather--loading .cmp-weather__refresh {
+    background-color: #6c757d;
+    border-color: #545b62;
+    cursor: not-allowed;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .cmp-weather {
+        margin: 10px;
+        padding: 15px;
+    }
+    
+    .cmp-weather h2 {
+        font-size: 20px;
+    }
+    
+    .cmp-weather__content {
+        padding: 12px;
+    }
+    
+    .cmp-weather__json {
+        font-size: 12px;
+    }
+    
+    .cmp-weather__refresh {
+        margin: 0 0 15px 10px;
+        padding: 6px 12px;
+        font-size: 13px;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .cmp-weather {
+        border-width: 2px;
+    }
+    
+    .cmp-weather__content {
+        border-width: 2px;
+    }
+    
+    .cmp-weather__refresh {
+        border-width: 2px;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .cmp-weather {
+        background-color: #2d3748;
+        border-color: #4a5568;
+        color: #e2e8f0;
+    }
+    
+    .cmp-weather h2 {
+        color: #f7fafc;
+    }
+    
+    .cmp-weather__content {
+        background-color: #1a202c;
+        border-color: #4a5568;
+    }
+    
+    .cmp-weather__json {
+        color: #e2e8f0;
+    }
+    
+    .cmp-weather__loading {
+        background-color: #4a5568;
+        color: #e2e8f0;
+    }
+    
+    .cmp-weather--unconfigured {
+        background-color: #744210;
+        border-color: #975a16;
+    }
+    
+    .cmp-weather--unconfigured h2 {
+        color: #fef3c7;
+    }
+    
+    .cmp-weather--unconfigured p {
+        background-color: #451a03;
+        border-color: #975a16;
+        color: #fef3c7;
+    }
+}
+
+/* Animation for loading state */
+.cmp-weather--loading {
+    position: relative;
+    overflow: hidden;
+}
+
+.cmp-weather--loading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    animation: loading-shimmer 1.5s infinite;
+}
+
+@keyframes loading-shimmer {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+/* Focus visible support */
+.cmp-weather__refresh:focus-visible {
+    outline: 2px solid #80bdff;
+    outline-offset: 2px;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .cmp-weather--enhanced {
+        transition: none;
+    }
+    
+    .cmp-weather__refresh {
+        transition: none;
+    }
+    
+    .cmp-weather--loading::after {
+        animation: none;
+    }
+}

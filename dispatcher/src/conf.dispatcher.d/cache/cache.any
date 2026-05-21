@@ -1,0 +1,10 @@
+/docroot "/var/www/html"
+/statfileslevel "0"
+/allowAuthorized "0"
+/rules {
+    /0000 {
+        /glob "*"
+        /type "allow"
+    }
+}
+

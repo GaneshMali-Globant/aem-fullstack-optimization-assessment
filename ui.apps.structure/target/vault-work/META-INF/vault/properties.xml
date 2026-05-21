@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>Assessment - UI Apps Structure</comment>
+<entry key="allowIndexDefinitions">false</entry>
+<entry key="created">2026-05-21T11:01:31.002Z</entry>
+<entry key="groupId">com.assessment</entry>
+<entry key="name">assessment.ui.apps.structure</entry>
+<entry key="description">Assessment - UI Apps Structure</entry>
+<entry key="artifactId">assessment.ui.apps.structure</entry>
+<entry key="version">1.0.0-SNAPSHOT</entry>
+<entry key="packageType">application</entry>
+<entry key="requiresRoot">false</entry>
+<entry key="group">assessment</entry>
+</properties>

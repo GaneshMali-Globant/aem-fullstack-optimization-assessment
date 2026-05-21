@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:template="/conf/assessment/settings/wcm/templates/content-page-with-components"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Sample Cloud Service Template Page"
+        sling:resourceType="assessment/components/page">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="core/wcm/components/container/v1/container"
+            layout="responsiveGrid">
+            <title
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Sample Content Page with Cloud Service Components"
+                sling:resourceType="core/wcm/components/title/v2/title"
+                type="h1"/>
+            <main_container
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="core/wcm/components/container/v1/container"
+                layout="responsiveGrid">
+                <text
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="core/wcm/components/text/v2/text"
+                    text="&lt;p>This page demonstrates the &lt;strong>Content Page with Cloud Service Components&lt;/strong> template, updated according to AEM as a Cloud Service requirements and Adobe documentation standards (2026).&lt;/p>"
+                    textIsRich="true"/>
+                <separator
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="core/wcm/components/separator/v2/separator"/>
+                <text_2
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="core/wcm/components/text/v2/text"
+                    text="&lt;h2>Cloud Service Optimizations&lt;/h2>&lt;p>This template has been updated with the following cloud service enhancements:&lt;/p>"
+                    textIsRich="true"/>
+                <component_container
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="core/wcm/components/container/v1/container"
+                    layout="responsiveGrid">
+                    <text_3
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="core/wcm/components/text/v2/text"
+                        text="&lt;h3>Latest Component Versions&lt;/h3>&lt;p>Updated to the latest Cloud Service compatible component versions (v2.30.4/3.0.0)&lt;/p>"
+                        textIsRich="true"/>
+                    <text_4
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="core/wcm/components/text/v2/text"
+                        text="&lt;h3>HTML5 Template Type&lt;/h3>&lt;p>Uses the modern HTML5 Page template type optimized for Cloud Service&lt;/p>"
+                        textIsRich="true"/>
+                    <text_5
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="core/wcm/components/text/v2/text"
+                        text="&lt;h3>Container Component&lt;/h3>&lt;p>Replaces aging responsivegrid with modern Container component v2.30.4&lt;/p>"
+                        textIsRich="true"/>
+                    <text_6
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="core/wcm/components/text/v2/text"
+                        text="&lt;h3>Content Policies&lt;/h3>&lt;p>Includes proper content policy structure for component governance&lt;/p>"
+                        textIsRich="true"/>
+                </component_container>
+                <image
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="core/wcm/components/image/v3/image"
+                    altText="AEM Cloud Service Architecture"
+                    displayPopupTitle="true"
+                    fileReference="/content/dam/assessment/sample.jpg"/>
+                <text_7
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="core/wcm/components/text/v2/text"
+                    text="&lt;h2>Adobe Documentation Alignment&lt;/h2>&lt;p>This template follows the current Adobe Experience League documentation for editable templates in AEM as a Cloud Service, ensuring compliance with:&lt;/p>&lt;ul>&lt;li>Template structure best practices&lt;/li>&lt;li>Core component version compatibility&lt;/li>&lt;li>Content policy configuration&lt;/li>&lt;li>Responsive grid implementation&lt;/li>&lt;/ul>"
+                    textIsRich="true"/>
+            </main_container>
+            <footer_container
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="core/wcm/components/container/v1/container"
+                layout="responsiveGrid">
+                <footer_text
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="core/wcm/components/text/v2/text"
+                    text="&lt;p>&amp;copy; 2026 Assessment - Content Page with Cloud Service Components Template&lt;/p>"
+                    textIsRich="true"/>
+            </footer_container>
+        </root>
+    </jcr:content>
+</jcr:root>

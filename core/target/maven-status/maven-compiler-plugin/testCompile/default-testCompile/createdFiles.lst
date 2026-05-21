@@ -1,0 +1,4 @@
+com/assessment/core/models/WeatherModelTest.class
+com/assessment/core/services/impl/WeatherServiceImplTest.class
+com/assessment/core/services/impl/HttpConnectionServiceImplTest.class
+com/assessment/core/services/impl/CacheServiceImplTest.class

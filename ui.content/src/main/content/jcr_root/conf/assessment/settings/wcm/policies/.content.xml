@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:rep="internal" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:mixinTypes="[rep:AccessControllable]"
+    jcr:primaryType="cq:Page">
+    <assessment jcr:primaryType="nt:unstructured">
+        <components jcr:primaryType="nt:unstructured">
+            <container jcr:primaryType="nt:unstructured">
+                <policy_1774540500108
+                    jcr:lastModified="{Date}2026-03-26T21:25:18.929+05:30"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="AssessmentPolicy"
+                    sling:resourceType="wcm/core/components/policy/policy"
+                    components="group:Assessment - Legacy"
+                    layoutDisabled="false">
+                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                </policy_1774540500108>
+            </container>
+        </components>
+    </assessment>
+    <wcm jcr:primaryType="nt:unstructured">
+        <foundation jcr:primaryType="nt:unstructured">
+            <components jcr:primaryType="nt:unstructured">
+                <responsivegrid jcr:primaryType="nt:unstructured">
+                    <policy_241495514508041
+                        jcr:lastModified="{Date}2026-03-26T22:23:51.426+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="AssessmentPolicy"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        components="group:Assessment - Legacy">
+                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                    </policy_241495514508041>
+                </responsivegrid>
+            </components>
+        </foundation>
+    </wcm>
+</jcr:root>

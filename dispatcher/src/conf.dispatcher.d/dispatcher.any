@@ -1,0 +1,3 @@
+/farms {
+    $include "enabled_farms/*.any"
+}
