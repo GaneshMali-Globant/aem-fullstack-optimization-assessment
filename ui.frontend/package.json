@@ -1,0 +1,10 @@
+{
+  "name": "assessment-ui-frontend",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Placeholder frontend workspace aligned with the AEM archetype layout.",
+  "scripts": {
+    "build": "node ./scripts/build.mjs"
+  }
+}
+

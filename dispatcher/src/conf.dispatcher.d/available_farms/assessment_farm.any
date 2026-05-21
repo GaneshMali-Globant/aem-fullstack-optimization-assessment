@@ -1,0 +1,32 @@
+/assessment {
+    /clientheaders {
+        "Host"
+        "User-Agent"
+        "Accept"
+        "Accept-Language"
+        "Accept-Encoding"
+        "Referer"
+        "Content-Type"
+        "Authorization"
+        "Origin"
+        "CSRF-Token"
+        "X-Forwarded-For"
+        "X-Forwarded-Proto"
+        "X-Requested-With"
+    }
+    /virtualhosts {
+        "assessment.local"
+    }
+    /renders {
+        /rend01 {
+            /hostname "publish"
+            /port "4503"
+        }
+    }
+    /filter {
+        $include "../filters/filters.any"
+    }
+    /cache {
+        $include "../cache/cache.any"
+    }
+}

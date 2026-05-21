@@ -1,0 +1,189 @@
+/filters {
+    # Base content access - READ ONLY access to published content
+    /0001 { 
+        /type "allow" 
+        /method "GET" 
+        /url "/content/*" 
+        /selectors "[""]" 
+        /extension "html,json"
+    }
+    
+    # Client libraries - CSS and JS only
+    /0010 { 
+        /type "allow" 
+        /method "GET" 
+        /url "/etc.clientlibs/*" 
+        /extension "[css,js]"
+    }
+    
+    # Static resources
+    /0020 { 
+        /type "allow" 
+        /method "GET" 
+        /url "/etc/designs/*" 
+    }
+    
+    /0021 { 
+        /type "allow" 
+        /method "GET" 
+        /url "/apps/*/resources/*" 
+    }
+    
+    # Core AEM functionality
+    /0030 { 
+        /type "allow" 
+        /method "GET" 
+        /url "/libs/granite/csrf/token.json" 
+    }
+    
+    # Dynamic media and DAM assets
+    /0040 { 
+        /type "allow" 
+        /method "GET" 
+        /url "/content/dam/*" 
+        /extension "[jpg,jpeg,png,gif,svg,webp,mp4,webm,pdf]"
+    }
+    
+    # Favicon
+    /0050 { 
+        /type "allow" 
+        /method "GET" 
+        /url "/favicon.ico" 
+        /extension "ico"
+    }
+    
+    # Robots.txt
+    /0060 { 
+        /type "allow" 
+        /method "GET" 
+        /url "/robots.txt" 
+    }
+    
+    # Site map - if applicable
+    /0070 { 
+        /type "allow" 
+        /method "GET" 
+        /url "/sitemap.xml" 
+    }
+    
+    # Explicit deny for sensitive paths
+    /9000 { /type "deny" /url "/bin/*" }
+    /9001 { /type "deny" /url "/apps/*" }
+    /9002 { /type "deny" /url "/libs/*" }
+    /9003 { /type "deny" /url "/etc/*" }
+    /9004 { /type "deny" /url "/var/*" }
+    /9005 { /type "deny" /url "/tmp/*" }
+    /9006 { /type "deny" /url "/jcr:*" }
+    /9007 { /type "deny" /url "/crx/*" }
+    /9008 { /type "deny" /url "/system/*" }
+    /9009 { /type "deny" /url "/etc/clientlibs/*" }
+    
+    # Deny dangerous file extensions
+    /9100 { 
+        /type "deny" 
+        /extension "[jsp,jspx,php,asp,aspx,exe,bat,cmd,sh,cgi,pl,py,rb,java,class]" 
+    }
+    
+    # Deny access to configuration files
+    /9200 { 
+        /type "deny" 
+        /url "*[.]properties" 
+    }
+    
+    /9201 { 
+        /type "deny" 
+        /url "*[.]xml" 
+    }
+    
+    /9202 { 
+        /type "deny" 
+        /url "*[.]config" 
+    }
+    
+    # Deny access to hidden files and directories
+    /9300 { 
+        /type "deny" 
+        /url "/.*/**" 
+    }
+    
+    # Deny access to backup files
+    /9400 { 
+        /type "deny" 
+        /url "*[.]bak" 
+    }
+    
+    /9401 { 
+        /type "deny" 
+        /url "*[.]backup" 
+    }
+    
+    /9402 { 
+        /type "deny" 
+        /url "*[.]old" 
+    }
+    
+    /9403 { 
+        /type "deny" 
+        /url "*[.]tmp" 
+    }
+    
+    # Deny access to system files
+    /9500 { 
+        /type "deny" 
+        /url "/WEB-INF/*" 
+    }
+    
+    /9501 { 
+        /type "deny" 
+        /url "/META-INF/*" 
+    }
+    
+    # Deny common attack patterns
+    /9600 { 
+        /type "deny" 
+        /method "POST" 
+        /url "*" 
+    }
+    
+    /9601 { 
+        /type "deny" 
+        /method "PUT" 
+        /url "*" 
+    }
+    
+    /9602 { 
+        /type "deny" 
+        /method "DELETE" 
+        /url "*" 
+    }
+    
+    /9603 { 
+        /type "deny" 
+        /method "TRACE" 
+        /url "*" 
+    }
+    
+    /9604 { 
+        /type "deny" 
+        /method "OPTIONS" 
+        /url "*" 
+    }
+    
+    /9605 { 
+        /type "deny" 
+        /method "HEAD" 
+        /url "*" 
+    }
+    
+    # Allow only specific headers
+    /9700 { 
+        /type "deny" 
+        /headers "*" 
+    }
+    
+    /9701 { 
+        /type "allow" 
+        /headers "[Content-Type,Accept,Accept-Language,User-Agent,Referer,Cache-Control,If-Modified-Since,If-None-Match]" 
+    }
+}
+

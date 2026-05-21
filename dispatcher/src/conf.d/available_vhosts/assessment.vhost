@@ -1,0 +1,50 @@
+<VirtualHost *:80>
+    ServerName assessment.local
+    DocumentRoot /var/www/html
+
+    <IfModule disp_apache2.c>
+        DispatcherConfig conf.dispatcher.d/dispatcher.any
+        DispatcherUseProcessedURL 1
+        DispatcherPassError 0
+    </IfModule>
+
+    <Directory />
+        AllowOverride None
+        Require all granted
+    </Directory>
+
+    <Location />
+        <IfModule disp_apache2.c>
+            SetHandler dispatcher-handler
+        </IfModule>
+    </Location>
+
+    # Security Headers
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "DENY"
+    Header always set X-XSS-Protection "1; mode=block"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src 'self'"
+    
+    # Remove server signature
+    ServerTokens Prod
+    ServerSignature Off
+
+    # Block common attacks
+    RewriteEngine On
+    RewriteCond %{REQUEST_METHOD} ^(TRACE|CONNECT|OPTIONS)
+    RewriteRule .* - [F,L]
+    
+    # Prevent directory traversal
+    RewriteCond %{REQUEST_URI} \.\./ [NC]
+    RewriteRule .* - [F,L]
+    
+    # Block suspicious user agents
+    RewriteCond %{HTTP_USER_AGENT} "^$|bot|crawler|spider|scraper" [NC,OR]
+    RewriteCond %{HTTP_USER_AGENT} "nikto|nmap|sqlmap|nessus|openvas" [NC]
+    RewriteRule .* - [F,L]
+
+    # Log access and errors
+    ErrorLog ${APACHE_LOG_DIR}/assessment_error.log
+    CustomLog ${APACHE_LOG_DIR}/assessment_access.log combined
+</VirtualHost>

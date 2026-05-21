@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.assessment</groupId>
+        <artifactId>aem-fullstack-optimization-assessment</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>assessment.ui.config</artifactId>
+    <packaging>content-package</packaging>
+    <name>Assessment - UI Config</name>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.jackrabbit</groupId>
+                <artifactId>filevault-package-maven-plugin</artifactId>
+                <version>${filevault.package.plugin.version}</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <group>assessment</group>
+                    <packageType>content</packageType>
+                    <name>assessment.ui.config</name>
+                    <version>${project.version}</version>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+

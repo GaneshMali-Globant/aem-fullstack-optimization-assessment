@@ -1,0 +1,10 @@
+{
+  "apiKey": "legacy-weather-api-key-12345",
+  "endpoint": "https://goweather.xyz/weather",
+  "enabled": true,
+  "cacheTtlMinutes": 60,
+  "connectionTimeoutSeconds": 15,
+  "maxRetryAttempts": 5,
+  "enableFallbackCache": true,
+  "tenantId": "publish"
+}

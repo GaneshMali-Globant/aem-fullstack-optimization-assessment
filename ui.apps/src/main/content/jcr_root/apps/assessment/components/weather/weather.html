@@ -1,0 +1,109 @@
+<sly data-sly-use.weatherModel="com.assessment.core.models.WeatherModel"></sly>
+<div class="cmp-weather" 
+     data-sly-test.hasConfigured="${weatherModel.configured}"
+     data-sly-test.hasError="${weatherModel.hasError}"
+     data-sly-test.errorType="${weatherModel.errorType}"
+     data-city="${weatherModel.city @ context='attribute'}">
+    
+    <h2>${weatherModel.pageTitle @ context='html'}</h2>
+    
+    <!-- Server-side rendered weather data -->
+    <div class="cmp-weather__server" data-sly-test="${hasConfigured}">
+        <div class="cmp-weather__content">
+            <div class="cmp-weather__json">${weatherModel.weatherJson @ context='html'}</div>
+        </div>
+    </div>
+    
+    <!-- Service Unavailable Error -->
+    <div class="cmp-weather__error cmp-weather__error--service-unavailable" 
+         data-sly-test="${hasError && errorType == 'SERVICE_UNAVAILABLE'}">
+        <div class="cmp-weather__error-icon">🌤️</div>
+        <div class="cmp-weather__error-content">
+            <h3>Weather Service Unavailable</h3>
+            <p>${weatherModel.errorMessage @ context='html'}</p>
+            <div class="cmp-weather__error-actions">
+                <button class="cmp-weather__retry-btn" onclick="location.reload()">Try Again</button>
+                <small>If the problem persists, please contact your system administrator.</small>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Configuration Not Found Error -->
+    <div class="cmp-weather__error cmp-weather__error--configuration" 
+         data-sly-test="${hasError && errorType == 'CONFIGURATION_NOT_FOUND'}">
+        <div class="cmp-weather__error-icon">⚙️</div>
+        <div class="cmp-weather__error-content">
+            <h3>Configuration Missing</h3>
+            <p>${weatherModel.errorMessage @ context='html'}</p>
+            <div class="cmp-weather__error-actions">
+                <small>Please ensure the weather service is properly configured for this page.</small>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Data Retrieval Error -->
+    <div class="cmp-weather__error cmp-weather__error--data" 
+         data-sly-test="${hasError && errorType == 'DATA_RETRIEVAL'}">
+        <div class="cmp-weather__error-icon">🌡️</div>
+        <div class="cmp-weather__error-content">
+            <h3>Weather Data Unavailable</h3>
+            <p>${weatherModel.errorMessage @ context='html'}</p>
+            <div class="cmp-weather__error-actions">
+                <button class="cmp-weather__retry-btn" onclick="location.reload()">Retry</button>
+                <small>The external weather service may be experiencing issues.</small>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Unexpected Error -->
+    <div class="cmp-weather__error cmp-weather__error--unexpected" 
+         data-sly-test="${hasError && errorType == 'UNEXPECTED'}">
+        <div class="cmp-weather__error-icon">❌</div>
+        <div class="cmp-weather__error-content">
+            <h3>Unexpected Error</h3>
+            <p>${weatherModel.errorMessage @ context='html'}</p>
+            <div class="cmp-weather__error-actions">
+                <button class="cmp-weather__retry-btn" onclick="location.reload()">Try Again</button>
+                <small>If this error continues, please contact technical support.</small>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Generic Error Fallback -->
+    <div class="cmp-weather__error cmp-weather__error--generic" 
+         data-sly-test="${hasError && !errorType}">
+        <div class="cmp-weather__error-icon">⚠️</div>
+        <div class="cmp-weather__error-content">
+            <h3>Weather Information Unavailable</h3>
+            <p>${weatherModel.errorMessage @ context='html'}</p>
+            <div class="cmp-weather__error-actions">
+                <button class="cmp-weather__retry-btn" onclick="location.reload()">Retry</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Loading state (for client-side enhancements) -->
+    <div class="cmp-weather__loading" data-sly-test="${!hasConfigured && !hasError}" hidden>
+        <div class="cmp-weather__loading-spinner">⏳</div>
+        <p>Loading weather data...</p>
+    </div>
+    
+    <!-- Client-side enhancement trigger -->
+    <div class="cmp-weather__client-enhancement" 
+         data-sly-test="${hasConfigured}"
+         data-weather-city="${weatherModel.city @ context='attribute'}"
+         data-healthy="${weatherModel.serviceHealthy}"
+         hidden>
+    </div>
+</div>
+
+<!-- Fallback for when component is not properly configured -->
+<sly data-sly-test="${!hasConfigured && !hasError}">
+    <div class="cmp-weather cmp-weather--unconfigured">
+        <div class="cmp-weather__error-icon">🔧</div>
+        <div class="cmp-weather__error-content">
+            <h2>Weather Component</h2>
+            <p>This weather service is currently unavailable.</p>
+        </div>
+    </div>
+</sly>

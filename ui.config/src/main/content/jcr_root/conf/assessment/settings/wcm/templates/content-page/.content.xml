@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
+    cq:templateType="/conf/assessment/settings/wcm/template-type/aempage"
+    jcr:primaryType="cq:Template"
+    jcr:title="Content Page"
+    status="enabled">
+    <jcr:content
+        cq:allowedTemplates="[/conf/assessment/settings/wcm/templates/.*]"
+        cq:lastModified="{Date}2026-03-26T22:23:51.435+05:30"
+        cq:lastModifiedBy="admin"
+        cq:templateType="/conf/assessment/settings/wcm/template-types/aempage"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Content Page"
+        allowedPaths="[/content/assessment(/.*)?]"
+        status="enabled"/>
+</jcr:root>
